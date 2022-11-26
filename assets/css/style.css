@@ -31,6 +31,11 @@ img {
   width: 100%;
 }
 
+section {
+  padding-top: 86px;
+  padding-bottom: 86px;
+}
+
 .shadow-on-hover {
   transition: all 0.3s;
 }
@@ -68,6 +73,11 @@ img {
   color: #fff;
 }
 
+.navbar-brand {
+  width: 100px;
+  color: #d8a60f;
+}
+
 /* Hero */
 
 #hero {
@@ -77,24 +87,30 @@ img {
   background-size: cover;
 }
 
-/* About */
-
-#about {
-  padding-top: 86px;
-  padding-bottom: 86px;
+#hero img {
+  width: 400px;
 }
 
+.logo {
+  color: #e2ae11;
+}
+
+.logo::after {
+  content: "Grill";
+  color: #fff;
+  font-size: 16px;
+  font-style: italic;
+  margin-left: -20px;
+  border-bottom: 2px solid #e2ae11;
+}
+
+/* About */
 #about .divider::before {
   content: "";
   width: 100px;
   height: 2px;
   display: block;
   background-color: #e3ae09;
-}
-
-#menu {
-  padding-top: 86px;
-  padding-bottom: 86px;
 }
 
 /* Intro text */
@@ -129,4 +145,69 @@ img {
   font-weight: 600;
   padding: 3px;
   border-radius: 5px;
+}
+
+/* Features */
+
+#features {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/batata1.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.feature {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature .feature-icon {
+  width: 70px;
+  height: 70px;
+  background-color: #d8a60f;
+  color: #fff;
+  font-size: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Reserva */
+#reserva .form-control {
+  border-radius: 0;
+}
+
+#reserva .form-control:focus {
+  box-shadow: none;
+  border-color: #d8a60f;
+}
+
+#reserva input.form-control {
+  height: 47px;
+}
+
+footer {
+  background-color: #222;
+  padding-top: 80px;
+  padding-bottom: 30px;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+footer img {
+  max-width: 175px;
+}
+
+.footer-bot {
+  padding-top: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.social-icons {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 48px;
 }
