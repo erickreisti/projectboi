@@ -31,6 +31,14 @@ img {
   width: 100%;
 }
 
+.shadow-on-hover {
+  transition: all 0.3s;
+}
+
+.shadow-on-hover:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
 .btn {
   padding: 14px 38px;
 }
@@ -112,4 +120,13 @@ img {
 #menu .nav-pills .nav-link.active {
   background-color: #e3ae09;
   color: #fff;
+}
+
+.menu-item__content span {
+  background-color: #d8a60f;
+  color: #fff;
+  line-height: 2;
+  font-weight: 600;
+  padding: 3px;
+  border-radius: 5px;
 }
