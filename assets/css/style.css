@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
-/* * {
-  scroll-behavior: smooth;
-} */
+:root {
+  --main-color: #e3ae09;
+  --secundary-color: #d8a60f;
+  --third-color: #86680d;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   color: #777;
@@ -19,6 +22,16 @@ h6 {
   color: #222;
 }
 
+/* Toggler modificado */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+
 a {
   color: #222;
   text-decoration: none;
@@ -27,7 +40,7 @@ a {
 }
 
 a:hover {
-  color: #e3ae09;
+  color: var(--main-color);
 }
 
 img {
@@ -53,6 +66,10 @@ section {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
+.nav-link:hover {
+  color: var(--secundary-color);
+}
+
 .btn {
   padding: 14px 38px;
 }
@@ -60,31 +77,31 @@ section {
 .btn-brand {
   color: #fff;
   font-weight: 500;
-  border-color: #e3ae09;
-  background-color: #e3ae09;
+  border-color: var(--main-color);
+  background-color: var(--main-color);
 }
 
 .btn-brand:hover {
-  border-color: #d8a60f;
-  background-color: #d8a60f;
+  border-color: var(--secundary-color);
+  background-color: var(--secundary-color);
   color: #fff;
 }
 
 .btn-getstart {
   color: #222;
   font-weight: 500;
-  border-color: #d8a60f;
-  background-color: #d8a60f;
+  border-color: var(--secundary-color);
+  background-color: var(--secundary-color);
 }
 
 .btn-getstart:hover {
-  background-color: #86680d;
+  background-color: var(--third-color);
   color: #fff;
 }
 
 .navbar-brand {
   width: 100px;
-  color: #d8a60f;
+  color: var(--secundary-color);
 }
 
 /* Hero */
@@ -101,7 +118,7 @@ section {
 }
 
 .logo {
-  color: #e2ae11;
+  color: #f1cf6a;
 }
 
 .logo::after {
@@ -110,7 +127,7 @@ section {
   font-size: 16px;
   font-style: italic;
   margin-left: -20px;
-  border-bottom: 2px solid #e2ae11;
+  border-bottom: 2px solid var(--secundary-color);
 }
 
 /* About */
@@ -119,7 +136,7 @@ section {
   width: 100px;
   height: 2px;
   display: block;
-  background-color: #e3ae09;
+  background-color: var(--main-color);
 }
 
 /* Intro text */
@@ -143,12 +160,12 @@ section {
 }
 
 #menu .nav-pills .nav-link.active {
-  background-color: #e3ae09;
+  background-color: var(--main-color);
   color: #fff;
 }
 
 .menu-item__content span {
-  background-color: #d8a60f;
+  background-color: var(--secundary-color);
   color: #fff;
   line-height: 2;
   font-weight: 600;
@@ -172,7 +189,7 @@ section {
 .feature .feature-icon {
   width: 70px;
   height: 70px;
-  background-color: #d8a60f;
+  background-color: var(--secundary-color);
   color: #fff;
   font-size: 48px;
   display: inline-flex;
@@ -188,7 +205,7 @@ section {
 
 #reserva .form-control:focus {
   box-shadow: none;
-  border-color: #d8a60f;
+  border-color: var(--secundary-color);
 }
 
 #reserva input.form-control {
