@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #777;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: #222;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+  transition: all 0.4s;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #e3ae09;
+}
+
+img {
+  width: 100%;
+}
+
+.btn {
+  padding: 14px 38px;
+}
+
+.btn-brand {
+  color: #fff;
+  font-weight: 500;
+  border-color: #e3ae09;
+  background-color: #e3ae09;
+}
+
+.btn-brand:hover {
+  border-color: #d8a60f;
+  background-color: #d8a60f;
+  color: #fff;
+}
+
+.btn-getstart {
+  color: #222;
+  font-weight: 500;
+  border-color: #d8a60f;
+  background-color: #d8a60f;
+}
+
+.btn-getstart:hover {
+  background-color: #86680d;
+  color: #fff;
+}
+
+/* Hero */
+
+#hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/boi.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* About */
+
+#about {
+  padding-top: 86px;
+  padding-bottom: 86px;
+}
+
+#about .divider::before {
+  content: "";
+  width: 100px;
+  height: 2px;
+  display: block;
+  background-color: #e3ae09;
+}
+
+#menu {
+  padding-top: 86px;
+  padding-bottom: 86px;
+}
+
+/* Intro text */
+.intro-text {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.intro-text p {
+  max-width: 500px;
+  margin: 16px auto 0 auto;
+}
+
+/*  Menu */
+#menu .nav-pills .nav-link {
+  background-color: #fff;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: #222;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+#menu .nav-pills .nav-link.active {
+  background-color: #e3ae09;
+  color: #fff;
+}
