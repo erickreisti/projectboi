@@ -19,6 +19,44 @@
     />
   </head>
   <body>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Pedido Online
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <h6>Escolha a plataforma de sua preferência:</h6>
+            <a
+              href="https://www.ifood.com.br/delivery/rio-de-janeiro-rj/boi-de-ouro-grill-churrascaria-campo-grande/2420cdd1-4121-485d-9124-fcd4a9824870?UTM_Medium=share"
+              target="_blank"
+              ><img src="./assets/images/ifood-icon.svg" alt="Ifood"
+            /></a>
+            <a
+              href="https://app.jotaja.com/churrascariaboideouro"
+              target="_blank"
+              ><img src="./assets/images/jotaja.svg" alt="Jotajá"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-white shadow py-3 sticky-top">
       <div class="container">
@@ -39,7 +77,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#hero">Home</a>
+              <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about">Sobre</a>
@@ -57,7 +95,13 @@
               <a class="nav-link" href="#contato">Contato</a>
             </li>
           </ul>
-          <a href="#" class="btn btn-brand">Pedido Online</a>
+          <a
+            href="#"
+            class="btn btn-brand"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            >Pedido Online</a
+          >
         </div>
       </div>
     </nav>
@@ -75,7 +119,7 @@
               O melhor do churrasco e pratos executivos
             </h2>
             <div>
-              <a href="#" class="btn btn-getstart btn-sm">Descubra-nos!</a>
+              <a href="#about" class="btn btn-getstart btn-sm">Descubra-nos!</a>
             </div>
           </div>
         </div>
@@ -104,7 +148,7 @@
               maxime ratione, libero eveniet corrupti hic. Itaque ipsum totam
               ullam aut!
             </p>
-            <a href="#" class="btn btn-brand">Veja Nosso Menu</a>
+            <a href="#menu" class="btn btn-brand">Veja Nosso Menu</a>
           </div>
         </div>
       </div>
@@ -479,8 +523,8 @@
             </p>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-4 col-sm-6">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-sm-12">
             <div class="feature py-5 px-4 text-center">
               <div class="feature-icon"><i class="bi bi-wifi"></i></div>
               <h4 class="text-white mt-4 mb-2">Wi-fi Liberado</h4>
@@ -490,7 +534,7 @@
               </p>
             </div>
           </div>
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-4 col-sm-12">
             <div class="feature py-5 px-4 text-center">
               <div class="feature-icon"><i class="bi bi-stopwatch"></i></div>
               <h4 class="text-white mt-4 mb-2">Delivery Rápido</h4>
@@ -500,7 +544,7 @@
               </p>
             </div>
           </div>
-          <div class="col-lg-4 col-sm-6">
+          <div class="col-lg-4 col-sm-12">
             <div class="feature py-5 px-4 text-center">
               <div class="feature-icon"><i class="bi bi-house"></i></div>
               <h4 class="text-white mt-4 mb-2">Ambiente Familiar</h4>
@@ -569,7 +613,7 @@
     <footer id="contato">
       <div class="footer-top py-4">
         <div class="container">
-          <div class="row">
+          <div class="row gy-4">
             <div class="col-lg-4">
               <h6 class="text-white mb-4">Mapa</h6>
               <iframe
@@ -591,7 +635,7 @@
             <div class="col-lg-3">
               <h6 class="text-white mb-4">Horário de Funcionamento</h6>
               <p class="mb-1">Segunda a Sexta: 12:00 as 00:00</p>
-              <p>Sábado, Domingo e Feriados: 12:00 as 22:00</p>
+              <p>Sáb, Dom e Feriados: 12:00 as 22:00</p>
             </div>
           </div>
         </div>
