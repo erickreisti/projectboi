@@ -14,9 +14,7 @@ function SendMail() {
     message: document.getElementById("message").value,
   };
 
-  if (Object.values(params).some((e) => !e)) {
-    console.log("error");
-  } else {
+  if (Object.values(params).every((e) => e)) {
     emailjs.send("gmailmessage", "template_b8qw9ks", params).then(function () {
       requestValid.classList.remove("hidden");
       console.log("SUCCESS!");
