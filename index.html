@@ -10,6 +10,8 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <!-- Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- main css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- bootstrap icons -->
@@ -65,7 +67,10 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white shadow py-3 sticky-top">
+    <nav
+      class="navbar navbar-expand-lg bg-white shadow fixed-top"
+      data-aos="fade-down"
+    >
       <div class="container">
         <a class="navbar-brand" href="#"
           ><img src="./assets/images/brand-boi.png" alt=""
@@ -119,7 +124,10 @@
           <div class="col-12">
             <img src="./assets/images/boideouro.png" alt="" />
             <h4 class="text-white text-uppercase fw-semibold">Churrascaria</h4>
-            <h1 class="text-uppercase fw-semibold display-1 logo">
+            <h1
+              class="text-uppercase fw-semibold display-1 logo"
+              data-aos="zoom-in"
+            >
               Boi de Ouro
             </h1>
             <h2 class="text-white mt-3 mb-4">
@@ -691,9 +699,11 @@
             </div>
             <div class="col-lg-3 ms-auto gx-3">
               <h6 class="text-white mb-4">Contato</h6>
-              <p class="mb-1">Telefone: (21) 1234-5678</p>
+              <p class="mb-1">Telefone: (21)96579-8959</p>
               <p class="mb-1">E-mail: boideouro@email.com</p>
-              <p class="mb-0">Endereço: Rua 123 da Silva Quatro, 123</p>
+              <p class="mb-0">
+                Endereço: Rua Fernando Saboya de fiúsa, Campo Grande - RJ
+              </p>
             </div>
             <div class="col-lg-3">
               <h6 class="text-white mb-4">Horário de Funcionamento</h6>
@@ -718,7 +728,10 @@
                 <a href="#" class="social-icons px-2"
                   ><i class="bi bi-facebook"></i
                 ></a>
-                <a href="#" class="social-icons"
+                <a
+                  href="https://wa.me/5521965798959?text=Tenho+interesse+no+seu+franguin"
+                  class="social-icons"
+                  target="_blank"
                   ><i class="bi bi-whatsapp"></i
                 ></a>
               </div>
@@ -736,5 +749,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="./assets/js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>
