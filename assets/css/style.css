@@ -236,3 +236,32 @@ footer .divider {
   font-size: 48px;
   font-weight: normal;
 }
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+
+.alert {
+  margin-bottom: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.info-message {
+  display: flex;
+  justify-content: center;
+  background-color: #b3ebb3;
+  color: #005200;
+  align-items: center;
+}
+
+.info-message__icon {
+  font-size: 24px;
+}
