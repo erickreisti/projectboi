@@ -232,9 +232,13 @@ footer .divider {
 .social-icons {
   width: 40px;
   height: 40px;
-  color: #fff;
+  color: var(--main-color);
   font-size: 48px;
   font-weight: normal;
+}
+
+.social-icons:hover {
+  color: #fff;
 }
 
 /* Change Autocomplete styles in Chrome*/
