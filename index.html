@@ -1,838 +1,879 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Project Boi</title>
-    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Churrascaria Boi de Ouro | O Melhor Churrasco</title>
+    <meta
+      name="description"
+      content="Churrascaria Boi de Ouro - O melhor churrasco gaúcho com tradição e qualidade. Carnes selecionadas, pratos executivos e ambiente familiar."
     />
-    <!-- Animation -->
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <!-- main css -->
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- bootstrap icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
-    />
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("0PCfxOPAkpZ_HlAAN");
-      })();
-    </script>
   </head>
   <body>
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="pedidos"
-      aria-hidden="true"
-    >
+    <!-- Header & Hero Combined Section -->
+    <section class="header-hero-section">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img
+              src="./assets/images/brand-boi.png"
+              alt="Boi de Ouro"
+              class="nav-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#menu">Cardápio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#features">Serviços</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#reservation">Reservas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contato</a>
+              </li>
+            </ul>
+            <a
+              href="#"
+              class="btn btn-primary-custom"
+              data-bs-toggle="modal"
+              data-bs-target="#orderModal"
+            >
+              <i class="bi bi-bag-check me-2"></i>Pedir Online
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="container">
+          <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6" data-aos="fade-right">
+              <div class="hero-text-content">
+                <h4 class="hero-subtitle">CHURRASCARIA PREMIUM</h4>
+                <h1 class="hero-title">
+                  BOI <span class="text-gold">DE</span> OURO
+                </h1>
+                <p class="hero-description">
+                  Há mais de 25 anos servindo o autêntico churrasco gaúcho com
+                  carnes selecionadas, preparo tradicional e ambiente familiar.
+                  Experiência única de sabor e qualidade.
+                </p>
+                <div class="hero-stats">
+                  <div class="stat-item">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Anos de Tradição</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Pratos Especiais</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Clientes Satisfeitos</span>
+                  </div>
+                </div>
+                <div class="hero-cta">
+                  <a href="#menu" class="btn btn-hero-primary">
+                    <i class="bi bi-menu-button me-2"></i>Ver Cardápio
+                  </a>
+                  <a href="#reservation" class="btn btn-hero-secondary">
+                    <i class="bi bi-calendar-check me-2"></i>Reservar Mesa
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+              <div class="hero-image-content">
+                <div class="floating-card card-1">
+                  <img src="./assets/images/item_1.jpg" alt="Picanha Premium" />
+                  <div class="card-content">
+                    <h5>Picanha Premium</h5>
+                    <span class="price">R$ 89,90</span>
+                  </div>
+                </div>
+                <div class="floating-card card-2">
+                  <img src="./assets/images/item_2.jpg" alt="Costela no Fogo" />
+                  <div class="card-content">
+                    <h5>Costela no Fogo</h5>
+                    <span class="price">R$ 78,90</span>
+                  </div>
+                </div>
+                <div class="floating-card card-3">
+                  <img src="./assets/images/item_3.jpg" alt="Filé Mignon" />
+                  <div class="card-content">
+                    <h5>Filé Mignon</h5>
+                    <span class="price">R$ 95,90</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-text">Descubra Mais</div>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img
+              src="./assets/images/knifechef.jpg"
+              alt="Sobre Nós"
+              class="img-fluid about-img"
+            />
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <h2 class="section-title">Nossa História</h2>
+            <div class="divider"></div>
+            <p class="lead">
+              Há mais de 25 anos servindo o melhor churrasco gaúcho com
+              qualidade e tradição. Nossa paixão pela gastronomia e compromisso
+              com a excelência nos tornaram referência em churrascaria na
+              região.
+            </p>
+            <p>
+              Utilizamos apenas cortes selecionados de carne, preparados com
+              técnicas tradicionais que realçam o sabor único de cada peça.
+              Nossa equipe de chefs está sempre em busca da perfeição para
+              proporcionar uma experiência memorável.
+            </p>
+            <div class="mt-4">
+              <a href="#menu" class="btn btn-primary-custom me-3">
+                <i class="bi bi-book me-2"></i>Ver Cardápio
+              </a>
+              <a href="#reservation" class="btn btn-outline-brand">
+                <i class="bi bi-telephone me-2"></i>Fazer Reserva
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-down">Nosso Cardápio</h2>
+        <p class="section-subtitle" data-aos="fade-down">
+          Descubra nossa seleção premium de carnes, pratos executivos e combos
+          especiais
+        </p>
+
+        <div class="menu-filters">
+          <button class="menu-filter-btn active" data-filter="all">
+            <i class="bi bi-grid-3x3-gap me-2"></i>Todos
+          </button>
+          <button class="menu-filter-btn" data-filter="carnes">
+            <i class="bi bi-fire me-2"></i>Carnes
+          </button>
+          <button class="menu-filter-btn" data-filter="executivos">
+            <i class="bi bi-briefcase me-2"></i>Executivos
+          </button>
+          <button class="menu-filter-btn" data-filter="combos">
+            <i class="bi bi-box-seam me-2"></i>Combos
+          </button>
+        </div>
+
+        <div class="row">
+          <!-- Carnes Premium -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-category="carnes"
+          >
+            <div class="menu-item">
+              <div class="menu-item-badge badge-primary">Mais Pedido</div>
+              <img src="./assets/images/item_1.jpg" alt="Picanha Premium" />
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">Picanha Premium</h3>
+                <p class="menu-item-description">
+                  Picanha nobre grelhada no ponto perfeito, acompanha farofa e
+                  vinagrete.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="tags">
+                    <span class="tag">#Carne</span>
+                    <span class="tag">#Premium</span>
+                  </div>
+                  <span class="menu-item-price">R$ 89,90</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="carnes"
+          >
+            <div class="menu-item">
+              <div class="menu-item-badge badge-success">Tradicional</div>
+              <img src="./assets/images/item_2.jpg" alt="Costela no Fogo" />
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">Costela no Fogo</h3>
+                <p class="menu-item-description">
+                  Costela bovina assada lentamente por 8 horas, extremamente
+                  macia.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="tags">
+                    <span class="tag">#Carne</span>
+                    <span class="tag">#Tradicional</span>
+                  </div>
+                  <span class="menu-item-price">R$ 78,90</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-category="carnes"
+          >
+            <div class="menu-item">
+              <div class="menu-item-badge badge-warning">Premium</div>
+              <img src="./assets/images/item_3.jpg" alt="Filé Mignon" />
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">Filé Mignon</h3>
+                <p class="menu-item-description">
+                  Cortes selecionados de filé mignon com molho especial da casa.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="tags">
+                    <span class="tag">#Carne</span>
+                    <span class="tag">#Nobre</span>
+                  </div>
+                  <span class="menu-item-price">R$ 95,90</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Executivos -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-category="executivos"
+          >
+            <div class="menu-item">
+              <div class="menu-item-badge badge-success">Popular</div>
+              <img
+                src="./assets/images/item_4.jpg"
+                alt="Executivo Boi de Ouro"
+              />
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">Executivo Boi de Ouro</h3>
+                <p class="menu-item-description">
+                  Arroz, feijão, farofa, vinagrete e carne do dia. Prato
+                  completo e saboroso.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="tags">
+                    <span class="tag">#Executivo</span>
+                    <span class="tag">#Completo</span>
+                  </div>
+                  <span class="menu-item-price">R$ 32,90</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="executivos"
+          >
+            <div class="menu-item">
+              <div class="menu-item-badge badge-warning">Premium</div>
+              <img
+                src="./assets/images/item_5.jpg"
+                alt="Executivo Filé Mignon"
+              />
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">Executivo Filé Mignon</h3>
+                <p class="menu-item-description">
+                  Arroz, feijão, batata frita e filé mignon. Sofisticação no
+                  almoço.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="tags">
+                    <span class="tag">#Executivo</span>
+                    <span class="tag">#Premium</span>
+                  </div>
+                  <span class="menu-item-price">R$ 45,90</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Combos -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-category="combos"
+          >
+            <div class="menu-item">
+              <div class="menu-item-badge badge-primary">Oferta</div>
+              <img src="./assets/images/item_6.jpg" alt="Combo Casal" />
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">Combo Casal</h3>
+                <p class="menu-item-description">
+                  2 Picanhas + 2 acompanhamentos + bebida. Perfeito para dois.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="tags">
+                    <span class="tag">#Combo</span>
+                    <span class="tag">#Romântico</span>
+                  </div>
+                  <span class="menu-item-price">R$ 129,90</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-category="combos"
+          >
+            <div class="menu-item">
+              <div class="menu-item-badge badge-primary">Família</div>
+              <img src="./assets/images/item_7.jpg" alt="Combo Família" />
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">Combo Família</h3>
+                <p class="menu-item-description">
+                  4 Picanhas + 4 acompanhamentos + bebidas. Para momentos
+                  especiais.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="tags">
+                    <span class="tag">#Combo</span>
+                    <span class="tag">#Família</span>
+                  </div>
+                  <span class="menu-item-price">R$ 199,90</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-category="carnes"
+          >
+            <div class="menu-item">
+              <div class="menu-item-badge badge-success">Tradicional</div>
+              <img src="./assets/images/item_8.jpg" alt="Alcatra com Queijo" />
+              <div class="menu-item-content">
+                <h3 class="menu-item-title">Alcatra com Queijo</h3>
+                <p class="menu-item-description">
+                  Alcatra suculenta com queijo coalho gratinado. Sabor
+                  incomparável.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="tags">
+                    <span class="tag">#Carne</span>
+                    <span class="tag">#Queijo</span>
+                  </div>
+                  <span class="menu-item-price">R$ 72,90</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a href="#" class="btn btn-primary-custom btn-lg btn-ver-cardapio">
+            <i class="bi bi-book me-2"></i>Ver Cardápio Completo
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+      <div class="container">
+        <h2 class="section-title text-white" data-aos="fade-down">
+          Por Que Nos Escolher?
+        </h2>
+        <p class="section-subtitle text-white" data-aos="fade-down">
+          Descubra os diferenciais que fazem do Boi de Ouro a melhor escolha
+        </p>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="bi bi-wifi"></i>
+              </div>
+              <h4 class="feature-title">Wi-fi Liberado</h4>
+              <p class="feature-description">
+                Internet gratuita de alta velocidade para você trabalhar ou se
+                divertir enquanto saboreia nossos pratos.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="bi bi-stopwatch"></i>
+              </div>
+              <h4 class="feature-title">Delivery Rápido</h4>
+              <p class="feature-description">
+                Entregamos em até 30 minutos na região central. Seu pedido chega
+                quentinho e no ponto certo.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mb-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="bi bi-house-heart"></i>
+              </div>
+              <h4 class="feature-title">Ambiente Familiar</h4>
+              <p class="feature-description">
+                Ambiente acolhedor e familiar, perfeito para celebrações,
+                encontros e refeições em família.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-down">Reserve Sua Mesa</h2>
+        <p class="section-subtitle" data-aos="fade-down">
+          Garanta seu lugar no Boi de Ouro. Faça sua reserva online e evite
+          filas
+        </p>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="reservation-form">
+              <form class="needs-validation" novalidate>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name" class="form-label">Nome Completo</label>
+                      <input
+                        type="text"
+                        id="name"
+                        class="form-control"
+                        placeholder="Seu nome completo"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor, informe seu nome.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email" class="form-label">E-mail</label>
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        placeholder="seu@email.com"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor, informe um e-mail válido.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="phone" class="form-label">Telefone</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        class="form-control"
+                        placeholder="(21) 99999-9999"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor, informe um telefone válido.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="date" class="form-label"
+                        >Data da Reserva</label
+                      >
+                      <input
+                        type="date"
+                        id="date"
+                        class="form-control"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor, selecione uma data.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="time" class="form-label">Horário</label>
+                      <input
+                        type="time"
+                        id="time"
+                        class="form-control"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Por favor, selecione um horário.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="persons" class="form-label"
+                        >Número de Pessoas</label
+                      >
+                      <select id="persons" class="form-control" required>
+                        <option value="">Selecione...</option>
+                        <option value="1">1 Pessoa</option>
+                        <option value="2">2 Pessoas</option>
+                        <option value="3">3 Pessoas</option>
+                        <option value="4">4 Pessoas</option>
+                        <option value="5">5 Pessoas</option>
+                        <option value="6">6 ou mais Pessoas</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Por favor, selecione o número de pessoas.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="message" class="form-label"
+                        >Observações Especiais</label
+                      >
+                      <textarea
+                        id="message"
+                        class="form-control"
+                        rows="4"
+                        placeholder="Alguma observação especial? (alergias, celebração, etc.)"
+                        maxlength="200"
+                      ></textarea>
+                      <div class="form-text">Máximo 200 caracteres</div>
+                    </div>
+                  </div>
+                  <div class="col-12 text-center mt-4">
+                    <button type="submit" class="btn btn-primary-custom btn-lg">
+                      <i class="bi bi-check-circle me-2"></i>Confirmar Reserva
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="footer-main">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+              <div class="footer-brand">
+                <img
+                  src="./assets/images/boideouro.png"
+                  alt="Boi de Ouro"
+                  class="footer-logo"
+                />
+                <p class="footer-description">
+                  Tradição e qualidade em churrasco gaúcho desde 1995. O melhor
+                  da culinária brasileira com sabor inigualável.
+                </p>
+                <div class="social-links">
+                  <a href="#" class="social-icon" title="Instagram">
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                  <a href="#" class="social-icon" title="Facebook">
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                  <a href="#" class="social-icon" title="WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                  <a href="#" class="social-icon" title="Twitter">
+                    <i class="bi bi-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h5 class="footer-title">Links Rápidos</h5>
+              <ul class="footer-links">
+                <li>
+                  <a href="#home"><i class="bi bi-chevron-right"></i> Home</a>
+                </li>
+                <li>
+                  <a href="#about"
+                    ><i class="bi bi-chevron-right"></i> Sobre Nós</a
+                  >
+                </li>
+                <li>
+                  <a href="#menu"
+                    ><i class="bi bi-chevron-right"></i> Cardápio</a
+                  >
+                </li>
+                <li>
+                  <a href="#features"
+                    ><i class="bi bi-chevron-right"></i> Serviços</a
+                  >
+                </li>
+                <li>
+                  <a href="#reservation"
+                    ><i class="bi bi-chevron-right"></i> Reservas</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h5 class="footer-title">Contato</h5>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <div>
+                    <strong>Endereço</strong>
+                    <p>Av. Principal, 123 - Centro<br />Rio de Janeiro - RJ</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <div>
+                    <strong>Telefone</strong>
+                    <p>(21) 3456-7890</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-whatsapp"></i>
+                  <div>
+                    <strong>WhatsApp</strong>
+                    <p>(21) 98765-4321</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <div>
+                    <strong>E-mail</strong>
+                    <p>contato@boideouro.com.br</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h5 class="footer-title">Horário de Funcionamento</h5>
+              <div class="opening-hours">
+                <div class="time-item">
+                  <span class="days">Terça à Sexta</span>
+                  <span class="hours">11:00 - 15:00<br />18:00 - 23:00</span>
+                </div>
+                <div class="time-item">
+                  <span class="days">Sábado</span>
+                  <span class="hours">11:00 - 16:00<br />18:00 - 00:00</span>
+                </div>
+                <div class="time-item">
+                  <span class="days">Domingo</span>
+                  <span class="hours">11:00 - 17:00</span>
+                </div>
+              </div>
+
+              <div class="newsletter">
+                <h6>Newsletter</h6>
+                <p>Receba nossas promoções</p>
+                <div class="newsletter-form">
+                  <input
+                    type="email"
+                    placeholder="Seu e-mail"
+                    class="form-control"
+                  />
+                  <button class="btn btn-primary-custom btn-sm">
+                    <i class="bi bi-send"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p class="mb-0">
+                &copy; 2024 Churrascaria Boi de Ouro. Todos os direitos
+                reservados.
+              </p>
+            </div>
+            <div class="col-md-6 text-md-end">
+              <div class="footer-payments">
+                <span>Formas de Pagamento:</span>
+                <i class="bi bi-credit-card"></i>
+                <i class="bi bi-paypal"></i>
+                <i class="bi bi-cash-coin"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div class="modal fade" id="orderModal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="pedidos">Pedido Online</h1>
+            <h5 class="modal-title">Pedido Online</h5>
             <button
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
-              aria-label="Close"
             ></button>
           </div>
           <div class="modal-body text-center">
-            <h6>Escolha a plataforma de sua preferência:</h6>
-            <a href="#"
-              ><img src="./assets/images/ifood-icon.svg" alt="Ifood"
-            /></a>
-            <a href="#"
-              ><img src="./assets/images/jotaja.svg" alt="Jotajá"
-            /></a>
+            <p>Escolha a plataforma de sua preferência:</p>
+            <div class="modal-platforms">
+              <a href="#" class="platform-btn">
+                <i class="bi bi-bag platform-icon text-danger"></i>
+                <span>iFood</span>
+              </a>
+              <a href="#" class="platform-btn">
+                <i class="bi bi-whatsapp platform-icon text-success"></i>
+                <span>WhatsApp</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg bg-white shadow fixed-top"
-      data-aos="fade-down"
-      data-aos-duration="1000"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="#"
-          ><img src="./assets/images/brand-boi.png" alt=""
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">Sobre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#menu">Menu</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#features">Serviços</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#reserva">Reserve</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contato">Contato</a>
-            </li>
-          </ul>
-          <a
-            href="#"
-            class="btn btn-brand"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-            >Pedido Online</a
-          >
-        </div>
-      </div>
-    </nav>
-    <main>
-      <!-- Hero -->
-      <section
-        id="hero"
-        class="min-vh-100 d-flex align-items-center text-center"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <img src="./assets/images/boideouro.png" alt="" />
-              <h4
-                class="text-white text-uppercase fw-semibold"
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-              >
-                Churrascaria
-              </h4>
-              <h1
-                class="text-uppercase fw-semibold display-1 logo"
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-              >
-                Boi de Ouro
-              </h1>
-              <h2 class="text-white mt-3 mb-4" data-aos="fade-up">
-                O melhor do churrasco e pratos executivos
-              </h2>
-              <div>
-                <a
-                  href="#about"
-                  class="btn btn-getstart btn-sm"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  >Descubra-nos!</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section id="about">
-        <div class="container">
-          <div class="row gy-4 align-items-center">
-            <div class="col-lg-5" data-aos="fade-up" data-aos-duration="3000">
-              <img src="./assets/images/knifechef.jpg" class="" alt="" />
-            </div>
-            <div class="col-lg-5" data-aos="fade-up" data-aos-duration="3000">
-              <h1>Sobre nós</h1>
-              <div class="divider my-4"></div>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab id
-                tempore et facilis veritatis harum eius, magni iure. Incidunt
-                maxime ratione, libero eveniet corrupti hic. Itaque ipsum totam
-                ullam aut!
-              </p>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab id
-                tempore et facilis veritatis harum eius, magni iure. Incidunt
-                maxime ratione, libero eveniet corrupti hic. Itaque ipsum totam
-                ullam aut!
-              </p>
-              <a href="#menu" class="btn btn-brand">Veja Nosso Menu</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Menu -->
-      <section id="menu" class="bg-light">
-        <div class="container">
-          <div class="row">
-            <div
-              class="col-12 intro-text"
-              data-aos="fade-down"
-              data-aos-duration="2000"
-            >
-              <h1>Explore Nosso Menu</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                iure delectus nesciunt nulla provident.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="container" data-aos="fade-up" data-aos-duration="2000">
-          <ul
-            class="nav nav-pills mb-4 justify-content-center"
-            id="pills-tab"
-            role="tablist"
-          >
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link active"
-                id="pills-all-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-all"
-                type="button"
-                role="tab"
-                aria-controls="pills-all"
-                aria-selected="true"
-              >
-                Todos
-              </button>
-            </li>
-
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link"
-                id="pills-skewers-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-skewers"
-                type="button"
-                role="tab"
-                aria-controls="pills-skewers"
-                aria-selected="true"
-              >
-                Espetinhos
-              </button>
-            </li>
-
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link"
-                id="pills-executives-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-executives"
-                type="button"
-                role="tab"
-                aria-controls="pills-executives"
-                aria-selected="true"
-              >
-                Executivos
-              </button>
-            </li>
-
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link"
-                id="pills-combos-tab"
-                data-bs-toggle="pill"
-                data-bs-target="#pills-combos"
-                type="button"
-                role="tab"
-                aria-controls="pills-combos"
-                aria-selected="true"
-              >
-                Combos
-              </button>
-            </li>
-          </ul>
-
-          <div class="tab-content" id="pills-tabContent">
-            <div
-              class="tab-pane fade show active"
-              id="pills-all"
-              role="tabpanel"
-              aria-labelledby="pills-all-tab"
-              tabindex="0"
-            >
-              <div class="row gy-4">
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_1.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_2.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_3.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_4.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_5.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_6.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_7.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_8.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="tab-pane fade show"
-              id="pills-skewers"
-              role="tabpanel"
-              aria-labelledby="pills-skewers-tab"
-              tabindex="0"
-            >
-              <div class="row gy-4">
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_2.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_3.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_4.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_8.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="tab-pane fade show"
-              id="pills-executives"
-              role="tabpanel"
-              aria-labelledby="pills-executives-tab"
-              tabindex="0"
-            >
-              <div class="row gy-4">
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_2.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_3.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_7.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_8.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="tab-pane fade show"
-              id="pills-combos"
-              role="tabpanel"
-              aria-labelledby="pills-combos-tab"
-              tabindex="0"
-            >
-              <div class="row gy-4">
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_5.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_6.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="menu-item bg-white shadow-on-hover">
-                    <img src="./assets/images/item_7.jpg" alt="" />
-                    <div class="menu-item__content p-4">
-                      <h5 class="mt-1 mb-2">
-                        <a href="#">Fudgy Chewy Food</a>
-                      </h5>
-                      <p class="small">
-                        Prato feito com malagueta e muita dor de garganta!
-                      </p>
-                      <p><span>#Carne</span> <span>#Salada</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Features -->
-      <section id="features">
-        <div class="container">
-          <div class="row gy-4">
-            <div
-              class="col-12 intro-text"
-              data-aos="fade-down"
-              data-aos-duration="3000"
-            >
-              <h1 class="text-white">Por que nos escolher?</h1>
-              <p class="text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                iure delectus nesciunt nulla provident.
-              </p>
-            </div>
-          </div>
-          <div class="row gy-4">
-            <div
-              class="col-lg-4 col-sm-12"
-              data-aos="fade-right"
-              data-aos-duration="3000"
-            >
-              <div class="feature py-5 px-4 text-center">
-                <div class="feature-icon"><i class="bi bi-wifi"></i></div>
-                <h4 class="text-white mt-4 mb-2">Wi-fi Liberado</h4>
-                <p class="text-white">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing
-                  elitnesciunt nulla provident.
-                </p>
-              </div>
-            </div>
-            <div
-              class="col-lg-4 col-sm-12"
-              data-aos="fade-up"
-              data-aos-duration="3000"
-            >
-              <div class="feature py-5 px-4 text-center">
-                <div class="feature-icon"><i class="bi bi-stopwatch"></i></div>
-                <h4 class="text-white mt-4 mb-2">Delivery Rápido</h4>
-                <p class="text-white">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing
-                  elitnesciunt nulla provident.
-                </p>
-              </div>
-            </div>
-            <div
-              class="col-lg-4 col-sm-12"
-              data-aos="fade-left"
-              data-aos-duration="3000"
-            >
-              <div class="feature py-5 px-4 text-center">
-                <div class="feature-icon"><i class="bi bi-house"></i></div>
-                <h4 class="text-white mt-4 mb-2">Ambiente Familiar</h4>
-                <p class="text-white">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing
-                  elitnesciunt nulla provident.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Reserve -->
-      <section id="reserva">
-        <div class="container">
-          <div class="row">
-            <div
-              class="col-12 intro-text"
-              data-aos="fade-down"
-              data-aos-duration="3000"
-            >
-              <h1>Reserve sua mesa</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                iure delectus nesciunt nulla provident.
-              </p>
-            </div>
-          </div>
-          <form
-            action="#"
-            class="row justify-content-center needs-validation"
-            data-aos="fade-up"
-            data-aos-duration="3000"
-            novalidate
-          >
-            <div class="col-lg-8">
-              <div class="row g-3">
-                <div class="form-group col-md-6">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="form-control"
-                    placeholder="Nome"
-                    required
-                  />
-                  <div class="valid-feedback">Ótimo!</div>
-                  <div class="invalid-feedback">
-                    Por favor, verifique novamente!
-                  </div>
-                </div>
-                <div class="form-group col-md-6">
-                  <input
-                    type="email"
-                    id="email"
-                    class="form-control"
-                    placeholder="E-mail"
-                    required
-                  />
-                  <div class="valid-feedback">Ótimo!</div>
-                  <div class="invalid-feedback">
-                    Por favor, verifique novamente!
-                  </div>
-                </div>
-                <div class="form-group col-md-6">
-                  <input
-                    type="date"
-                    id="date"
-                    class="form-control"
-                    placeholder="Data"
-                    required
-                  />
-                  <div class="valid-feedback">Ótimo!</div>
-                  <div class="invalid-feedback">
-                    Por favor, verifique novamente!
-                  </div>
-                </div>
-                <div class="form-group col-md-6">
-                  <input
-                    type="number"
-                    id="persons"
-                    class="form-control"
-                    placeholder="1 a 20 Pessoas"
-                    min="1"
-                    max="20"
-                    required
-                  />
-                  <div class="valid-feedback">Ótimo!</div>
-                  <div class="invalid-feedback">
-                    Por favor, verifique novamente!
-                  </div>
-                </div>
-                <div class="form-group col-md-12">
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    cols="20"
-                    rows="3"
-                    placeholder="Mensagem"
-                    maxlength="100"
-                    style="resize: none"
-                    required
-                  ></textarea>
-                  <div class="valid-feedback">Ótimo!</div>
-                  <div class="invalid-feedback">
-                    Por favor, verifique novamente!
-                  </div>
-                </div>
-                <div class="form-group text-center">
-                  <button type="submit" class="btnSubmit btn btn-brand">
-                    Enviar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </form>
-          <div class="info-message hidden mt-4 p-4">
-            <div class="info-message__icon pe-4">
-              <i class="bi bi-check-circle"></i>
-            </div>
-            <div>Parabéns! Você acaba de garantir sua reserva!</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer id="contato">
-        <div
-          class="footer-top py-4"
-          data-aos="fade-down"
-          data-aos-duration="1000"
-        >
-          <div class="container">
-            <div class="row gy-4">
-              <div class="col-lg-4">
-                <h6 class="text-white mb-4">Mapa</h6>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235231.59444658388!2d-43.44804198632801!3d-22.895155565510997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bde559108a05b%3A0x50dc426c672fd24e!2sRio%20de%20Janeiro%2C%20RJ!5e0!3m2!1spt-BR!2sbr!4v1702304707092!5m2!1spt-BR!2sbr"
-                  width="400"
-                  height="200"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-              <div class="col-lg-3 ms-auto gx-3">
-                <h6 class="text-white mb-4">Contato</h6>
-                <p class="mb-1">Telefone: (XX)1234-5678</p>
-                <p class="mb-1">E-mail: projectboi@email.com</p>
-                <p class="mb-0">Endereço: Rua Project Boi</p>
-              </div>
-              <div class="col-lg-3">
-                <h6 class="text-white mb-4">Horário de Funcionamento</h6>
-                <p class="mb-1">Terça à Sábado: 11:00 às 00:00</p>
-                <p>Dom e Feriados: 11:00 às 16:00</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="divider footer-bot">
-          <div class="container">
-            <div class="row pt-4">
-              <div
-                class="col-lg-12 text-center"
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-              >
-                <img src="./assets/images/boideouro.png" alt="" />
-                <h6 class="text-white mt-2">Churrascaria Boi de Ouro</h6>
-                <div class="social-links pb-4">
-                  <p class="text-white m-0">Siga-nos</p>
-                  <a href="#" class="social-icons"
-                    ><i class="bi bi-instagram"></i
-                  ></a>
-                  <a href="#" class="social-icons px-2"
-                    ><i class="bi bi-facebook"></i
-                  ></a>
-                  <a href="#" class="social-icons"
-                    ><i class="bi bi-whatsapp"></i
-                  ></a>
-                </div>
-              </div>
-              <div class="divider text-center py-1">
-                <span>Copyright © 2022 by Erick Reis</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </main>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./assets/js/script.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 100) {
+          navbar.classList.add("navbar-scrolled");
+        } else {
+          navbar.classList.remove("navbar-scrolled");
+        }
+      });
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Form validation
+      (function () {
+        "use strict";
+        var forms = document.querySelectorAll(".needs-validation");
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
   </body>
 </html>
