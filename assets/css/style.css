@@ -501,6 +501,9 @@ section {
   font-weight: 600;
   transition: var(--transition);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .menu-filter-btn.active,
@@ -508,6 +511,28 @@ section {
   background: var(--primary-color);
   color: var(--white);
   transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Menu Items Container */
+.menu-items-container {
+  min-height: 500px;
+  transition: var(--transition);
+}
+
+/* Menu Item Cards */
+.menu-item-card {
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .menu-item {
@@ -516,7 +541,7 @@ section {
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
-  margin-bottom: 2rem;
+  height: 100%;
   position: relative;
 }
 
@@ -533,7 +558,7 @@ section {
 }
 
 .menu-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .menu-item-content {
@@ -553,6 +578,7 @@ section {
   color: var(--text-light);
   margin-bottom: 1rem;
   font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .menu-item-price {
@@ -590,6 +616,7 @@ section {
 .tags {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .tag {
@@ -975,6 +1002,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  cursor: pointer;
 }
 
 .btn-primary-custom:hover {
@@ -998,6 +1026,70 @@ footer {
   background: var(--primary-color);
   color: var(--white);
   transform: translateY(-2px);
+}
+
+/* ===== ANIMAÇÕES DO CARDÁPIO ===== */
+
+.menu-item-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease;
+}
+
+.menu-item-card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efeitos de Filtro */
+.menu-filter-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-filter-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.menu-filter-btn.active::before {
+  left: 100%;
+}
+
+/* Efeito de loading durante transições */
+#menu.filtering {
+  position: relative;
+}
+
+#menu.filtering::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 /* Responsive */
@@ -1058,6 +1150,7 @@ footer {
   .menu-filter-btn {
     width: 100%;
     max-width: 200px;
+    margin: 0.25rem 0;
   }
 
   .reservation-form {
@@ -1103,101 +1196,5 @@ footer {
   .footer-payments {
     justify-content: center;
     margin-top: 1rem;
-  }
-}
-
-/* ===== ANIMAÇÕES DO CARDÁPIO ===== */
-
-.menu-item {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.5s ease;
-}
-
-.menu-item.animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.menu-search {
-  background: rgba(255, 255, 255, 0.9);
-  border: 2px solid var(--primary-color);
-  border-radius: 25px;
-  padding: 0.75rem 1.5rem;
-  transition: var(--transition);
-}
-
-.menu-search:focus {
-  box-shadow: 0 0 0 0.2rem rgba(197, 45, 47, 0.25);
-  border-color: var(--primary-color);
-  transform: translateY(-2px);
-}
-
-.menu-filter-btn {
-  position: relative;
-  overflow: hidden;
-}
-
-.menu-filter-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.menu-filter-btn.active::before {
-  left: 100%;
-}
-
-/* Efeito de loading durante transições */
-#menu.filtering {
-  position: relative;
-}
-
-#menu.filtering::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  border: 3px solid var(--primary-color);
-  border-radius: 50%;
-  border-top-color: transparent;
-  animation: spin 1s linear infinite;
-  transform: translate(-50%, -50%);
-}
-
-@keyframes spin {
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .menu-filters {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menu-filter-btn {
-    width: 100%;
-    max-width: 200px;
-    margin: 0.25rem 0;
-  }
-
-  .menu-search {
-    width: 100%;
-    max-width: 300px;
   }
 }

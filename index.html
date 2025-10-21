@@ -29,7 +29,7 @@
   </head>
   <body>
     <!-- Header & Hero Combined Section -->
-    <section class="header-hero-section">
+    <section class="header-hero-section" id="home">
       <!-- Navigation -->
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
@@ -219,10 +219,10 @@
           </button>
         </div>
 
-        <div class="row">
+        <div class="row menu-items-container">
           <!-- Carnes Premium -->
           <div
-            class="col-lg-4 col-md-6"
+            class="col-lg-4 col-md-6 menu-item-card"
             data-aos="fade-up"
             data-category="carnes"
           >
@@ -247,7 +247,7 @@
           </div>
 
           <div
-            class="col-lg-4 col-md-6"
+            class="col-lg-4 col-md-6 menu-item-card"
             data-aos="fade-up"
             data-aos-delay="100"
             data-category="carnes"
@@ -273,7 +273,7 @@
           </div>
 
           <div
-            class="col-lg-4 col-md-6"
+            class="col-lg-4 col-md-6 menu-item-card"
             data-aos="fade-up"
             data-aos-delay="200"
             data-category="carnes"
@@ -299,7 +299,7 @@
 
           <!-- Executivos -->
           <div
-            class="col-lg-4 col-md-6"
+            class="col-lg-4 col-md-6 menu-item-card"
             data-aos="fade-up"
             data-category="executivos"
           >
@@ -327,7 +327,7 @@
           </div>
 
           <div
-            class="col-lg-4 col-md-6"
+            class="col-lg-4 col-md-6 menu-item-card"
             data-aos="fade-up"
             data-aos-delay="100"
             data-category="executivos"
@@ -357,7 +357,7 @@
 
           <!-- Combos -->
           <div
-            class="col-lg-4 col-md-6"
+            class="col-lg-4 col-md-6 menu-item-card"
             data-aos="fade-up"
             data-category="combos"
           >
@@ -381,7 +381,7 @@
           </div>
 
           <div
-            class="col-lg-4 col-md-6"
+            class="col-lg-4 col-md-6 menu-item-card"
             data-aos="fade-up"
             data-aos-delay="100"
             data-category="combos"
@@ -407,7 +407,7 @@
           </div>
 
           <div
-            class="col-lg-4 col-md-6"
+            class="col-lg-4 col-md-6 menu-item-card"
             data-aos="fade-up"
             data-aos-delay="200"
             data-category="carnes"
@@ -434,9 +434,9 @@
         </div>
 
         <div class="text-center mt-5" data-aos="fade-up">
-          <a href="#" class="btn btn-primary-custom btn-lg btn-ver-cardapio">
+          <button class="btn btn-primary-custom btn-lg" id="btn-ver-cardapio">
             <i class="bi bi-book me-2"></i>Ver Cardápio Completo
-          </a>
+          </button>
         </div>
       </div>
     </section>

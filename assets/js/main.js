@@ -1,10 +1,11 @@
 // ===== CARDÁPIO INTERATIVO - BOI DE OURO =====
 
-class Cardapio {
+class CardapioInterativo {
   constructor() {
-    this.menuItems = document.querySelectorAll(".menu-item");
+    this.menuItems = document.querySelectorAll(".menu-item-card");
     this.filterButtons = document.querySelectorAll(".menu-filter-btn");
-    this.verCardapioBtn = document.querySelector(".btn-ver-cardapio");
+    this.verCardapioBtn = document.getElementById("btn-ver-cardapio");
+    this.menuContainer = document.querySelector(".menu-items-container");
     this.currentFilter = "all";
 
     this.init();
@@ -12,7 +13,7 @@ class Cardapio {
 
   init() {
     this.setupEventListeners();
-    this.setupMenuItems();
+    this.animateItemsOnLoad();
   }
 
   setupEventListeners() {
@@ -30,17 +31,18 @@ class Cardapio {
         this.showAllItems();
       });
     }
-
-    // Event listener para busca (opcional)
-    this.setupSearch();
   }
 
-  setupMenuItems() {
-    // Adiciona animação de entrada para os itens
-    this.menuItems.forEach((item, index) => {
-      item.style.animationDelay = `${index * 0.1}s`;
-      item.classList.add("animate-in");
-    });
+  animateItemsOnLoad() {
+    // Animação inicial dos itens
+    setTimeout(() => {
+      this.menuItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.opacity = "1";
+          item.style.transform = "translateY(0)";
+        }, index * 100);
+      });
+    }, 300);
   }
 
   handleFilterClick(button) {
@@ -67,20 +69,29 @@ class Cardapio {
   }
 
   filterItems(filter) {
-    this.menuItems.forEach((item) => {
-      const category = item.getAttribute("data-category");
-      const isVisible = filter === "all" || category === filter;
+    // Adiciona classe de loading
+    document.getElementById("menu").classList.add("filtering");
 
-      if (isVisible) {
-        this.showItem(item);
-      } else {
-        this.hideItem(item);
-      }
-    });
-
-    // Animação de reorganização
+    // Timeout para dar tempo da animação de loading aparecer
     setTimeout(() => {
+      this.menuItems.forEach((item) => {
+        const category = item.getAttribute("data-category");
+        const isVisible = filter === "all" || category === filter;
+
+        if (isVisible) {
+          this.showItem(item);
+        } else {
+          this.hideItem(item);
+        }
+      });
+
+      // Reorganiza o grid após a filtragem
       this.reorganizeGrid();
+
+      // Remove classe de loading
+      setTimeout(() => {
+        document.getElementById("menu").classList.remove("filtering");
+      }, 300);
     }, 300);
   }
 
@@ -106,6 +117,12 @@ class Cardapio {
       button.classList.remove("active");
     });
 
+    // Ativa o botão "Todos"
+    const allButton = document.querySelector('[data-filter="all"]');
+    if (allButton) {
+      allButton.classList.add("active");
+    }
+
     // Mostra todos os itens
     this.menuItems.forEach((item) => {
       this.showItem(item);
@@ -121,17 +138,22 @@ class Cardapio {
   }
 
   reorganizeGrid() {
-    const container = document.querySelector("#menu .row");
     const visibleItems = Array.from(this.menuItems).filter(
       (item) => item.style.display !== "none"
     );
 
     // Limpa o container
-    container.innerHTML = "";
+    this.menuContainer.innerHTML = "";
 
-    // Reinsere os itens visíveis
-    visibleItems.forEach((item) => {
-      container.appendChild(item);
+    // Reinsere os itens visíveis com animação
+    visibleItems.forEach((item, index) => {
+      this.menuContainer.appendChild(item);
+
+      // Aplica animação de entrada
+      setTimeout(() => {
+        item.style.opacity = "1";
+        item.style.transform = "translateY(0)";
+      }, index * 100);
     });
   }
 
@@ -154,116 +176,67 @@ class Cardapio {
     }
   }
 
-  setupSearch() {
-    // Funcionalidade de busca (opcional)
-    const searchInput = document.createElement("input");
-    searchInput.type = "text";
-    searchInput.placeholder = "Buscar no cardápio...";
-    searchInput.className = "menu-search form-control mb-4";
-    searchInput.style.maxWidth = "300px";
-    searchInput.style.margin = "0 auto";
-    searchInput.style.display = "block";
-
-    const filtersContainer = document.querySelector(".menu-filters");
-    if (filtersContainer) {
-      filtersContainer.parentNode.insertBefore(searchInput, filtersContainer);
-
-      searchInput.addEventListener("input", (e) => {
-        this.handleSearch(e.target.value);
-      });
-    }
+  // Método para adicionar novos itens dinamicamente
+  adicionarItem(itemData) {
+    const menuItem = this.criarMenuItem(itemData);
+    this.menuContainer.appendChild(menuItem);
+    this.menuItems = document.querySelectorAll(".menu-item-card");
   }
 
-  handleSearch(searchTerm) {
-    const term = searchTerm.toLowerCase().trim();
+  criarMenuItem(itemData) {
+    const col = document.createElement("div");
+    col.className = "col-lg-4 col-md-6 menu-item-card";
+    col.setAttribute("data-category", itemData.category);
+    col.style.display = "none";
+    col.style.opacity = "0";
+    col.style.transform = "translateY(30px)";
 
-    this.menuItems.forEach((item) => {
-      const title = item
-        .querySelector(".menu-item-title")
-        .textContent.toLowerCase();
-      const description = item
-        .querySelector(".menu-item-description")
-        .textContent.toLowerCase();
-      const tags = Array.from(item.querySelectorAll(".tag")).map((tag) =>
-        tag.textContent.toLowerCase()
-      );
+    col.innerHTML = `
+            <div class="menu-item">
+                ${
+                  itemData.badge
+                    ? `<div class="menu-item-badge ${
+                        itemData.badge
+                      }">${this.getBadgeText(itemData.badge)}</div>`
+                    : ""
+                }
+                <img src="${itemData.image}" alt="${itemData.title}" />
+                <div class="menu-item-content">
+                    <h3 class="menu-item-title">${itemData.title}</h3>
+                    <p class="menu-item-description">${itemData.description}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="tags">
+                            ${itemData.tags
+                              .map((tag) => `<span class="tag">${tag}</span>`)
+                              .join("")}
+                        </div>
+                        <span class="menu-item-price">${itemData.price}</span>
+                    </div>
+                </div>
+            </div>
+        `;
 
-      const matches =
-        title.includes(term) ||
-        description.includes(term) ||
-        tags.some((tag) => tag.includes(term));
+    return col;
+  }
 
-      if (matches || term === "") {
-        this.showItem(item);
-      } else {
-        this.hideItem(item);
-      }
-    });
+  getBadgeText(badgeClass) {
+    const badgeTexts = {
+      "badge-primary": "Mais Pedido",
+      "badge-success": "Tradicional",
+      "badge-warning": "Premium",
+    };
+    return badgeTexts[badgeClass] || "Destaque";
   }
 }
 
 // ===== INICIALIZAÇÃO =====
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Inicializa o cardápio
-  new Cardapio();
+  // Inicializa o cardápio interativo
+  const cardapio = new CardapioInterativo();
 
-  // Adiciona mais itens de exemplo ao cardápio
-  addMoreMenuItems();
-});
-
-// ===== ITENS ADICIONAIS DO CARDÁPIO =====
-
-function addMoreMenuItems() {
-  const menuContainer = document.querySelector("#menu .row");
-  if (!menuContainer) return;
-
-  const additionalItems = [
-    {
-      category: "executivos",
-      image: "./assets/images/item_4.jpg",
-      title: "Executivo Boi de Ouro",
-      description: "Arroz, feijão, farofa, vinagrete e carne do dia",
-      price: "R$ 32,90",
-      badge: "badge-success",
-      tags: ["#Executivo", "#Completo"],
-    },
-    {
-      category: "executivos",
-      image: "./assets/images/item_5.jpg",
-      title: "Executivo Filé Mignon",
-      description: "Arroz, feijão, batata frita e filé mignon",
-      price: "R$ 45,90",
-      badge: "badge-warning",
-      tags: ["#Executivo", "#Premium"],
-    },
-    {
-      category: "combos",
-      image: "./assets/images/item_6.jpg",
-      title: "Combo Casal",
-      description: "2 Picanhas + 2 acompanhamentos + bebida",
-      price: "R$ 129,90",
-      badge: "badge-primary",
-      tags: ["#Combo", "#Romântico"],
-    },
-    {
-      category: "combos",
-      image: "./assets/images/item_7.jpg",
-      title: "Combo Família",
-      description: "4 Picanhas + 4 acompanhamentos + bebidas",
-      price: "R$ 199,90",
-      badge: "badge-primary",
-      tags: ["#Combo", "#Família"],
-    },
-    {
-      category: "carnes",
-      image: "./assets/images/item_8.jpg",
-      title: "Alcatra com Queijo",
-      description: "Alcatra suculenta com queijo coalho gratinado",
-      price: "R$ 72,90",
-      badge: "",
-      tags: ["#Carne", "#Queijo"],
-    },
+  // Exemplo de como adicionar novos itens dinamicamente
+  const novosItens = [
     {
       category: "carnes",
       image: "./assets/images/item_1.jpg",
@@ -273,54 +246,65 @@ function addMoreMenuItems() {
       badge: "badge-success",
       tags: ["#Carne", "#Tradicional"],
     },
+    {
+      category: "executivos",
+      image: "./assets/images/item_4.jpg",
+      title: "Executivo Especial",
+      description: "Arroz, feijão, batata frita, salada e filé mignon",
+      price: "R$ 49,90",
+      badge: "badge-warning",
+      tags: ["#Executivo", "#Especial"],
+    },
   ];
 
-  additionalItems.forEach((item, index) => {
-    const menuItem = createMenuItem(item, index + 3);
-    menuContainer.appendChild(menuItem);
+  // Adiciona os novos itens após 2 segundos (apenas para demonstração)
+  setTimeout(() => {
+    novosItens.forEach((item) => {
+      cardapio.adicionarItem(item);
+    });
+
+    // Mostra os novos itens se o filtro atual for compatível
+    cardapio.filterItems(cardapio.currentFilter);
+  }, 2000);
+});
+
+// ===== FUNÇÕES AUXILIARES =====
+
+// Função para buscar itens no cardápio
+function buscarNoCardapio(termo) {
+  const cardapio = new CardapioInterativo();
+  const itens = document.querySelectorAll(".menu-item-card");
+
+  termo = termo.toLowerCase().trim();
+
+  itens.forEach((item) => {
+    const titulo = item
+      .querySelector(".menu-item-title")
+      .textContent.toLowerCase();
+    const descricao = item
+      .querySelector(".menu-item-description")
+      .textContent.toLowerCase();
+    const tags = Array.from(item.querySelectorAll(".tag")).map((tag) =>
+      tag.textContent.toLowerCase()
+    );
+
+    const corresponde =
+      titulo.includes(termo) ||
+      descricao.includes(termo) ||
+      tags.some((tag) => tag.includes(termo));
+
+    if (corresponde || termo === "") {
+      item.style.display = "block";
+      setTimeout(() => {
+        item.style.opacity = "1";
+        item.style.transform = "translateY(0)";
+      }, 50);
+    } else {
+      item.style.opacity = "0";
+      item.style.transform = "translateY(20px)";
+      setTimeout(() => {
+        item.style.display = "none";
+      }, 300);
+    }
   });
-}
-
-function createMenuItem(itemData, delayIndex) {
-  const col = document.createElement("div");
-  col.className = "col-lg-4 col-md-6";
-  col.setAttribute("data-aos", "fade-up");
-  col.setAttribute("data-aos-delay", (delayIndex * 100).toString());
-  col.setAttribute("data-category", itemData.category);
-
-  col.innerHTML = `
-        <div class="menu-item">
-            ${
-              itemData.badge
-                ? `<div class="menu-item-badge ${
-                    itemData.badge
-                  }">${getBadgeText(itemData.badge)}</div>`
-                : ""
-            }
-            <img src="${itemData.image}" alt="${itemData.title}" />
-            <div class="menu-item-content">
-                <h3 class="menu-item-title">${itemData.title}</h3>
-                <p class="menu-item-description">${itemData.description}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="tags">
-                        ${itemData.tags
-                          .map((tag) => `<span class="tag">${tag}</span>`)
-                          .join("")}
-                    </div>
-                    <span class="menu-item-price">${itemData.price}</span>
-                </div>
-            </div>
-        </div>
-    `;
-
-  return col;
-}
-
-function getBadgeText(badgeClass) {
-  const badgeTexts = {
-    "badge-primary": "Mais Pedido",
-    "badge-success": "Tradicional",
-    "badge-warning": "Premium",
-  };
-  return badgeTexts[badgeClass] || "Destaque";
 }
